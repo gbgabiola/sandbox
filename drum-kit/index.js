@@ -7,13 +7,23 @@ for (var i = 0; i < buttons.length; i++) {
     
     var buttonInnerHTML = this.innerHTML;
     playSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
   });
 }
 
 
 // Detecting Keyboard Press
 document.addEventListener("keydown", function(event) {
-  playSound(event.key);
+  var charList = "wasdjkl";
+
+  // Condition if key is invalid
+  if (charList.indexOf(event.key) === -1) {
+    console.log("Invalid Key!");
+  } else {
+    // console.log(event);
+    playSound(event.key);
+    buttonAnimation(event.key);
+  }
 });
 
 function playSound(key) {
@@ -47,6 +57,17 @@ function playSound(key) {
       kick.play();
       break;
 
-    default: console.log(buttonInnerHTML);
+    default: console.log(key);
   }
+}
+
+// Animation
+function buttonAnimation(currentKey) {
+  var activeButton = document.querySelector("." + currentKey);
+
+  activeButton.classList.add("pressed");
+
+  setTimeout(function() {
+    activeButton.classList.remove("pressed");
+  }, 100);
 }
