@@ -5,7 +5,8 @@ This reposity is a sandbox/playground for some code along tutorial courses I hav
 ## Lists of Sandbox Projects
 
 - [x] [Dicee Game](dicee)
-- [ ] [Drum Kit](drum-kit)
+- [x] [Drum Kit](drum-kit)
+- [x] [Simon Game](simon-game)
 
 Visit the [live preview](https://genesisgabiola.github.io/sandbox/).
 
