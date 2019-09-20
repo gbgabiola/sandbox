@@ -7,6 +7,7 @@ This reposity is a sandbox/playground for some code along tutorial courses I hav
 - [x] [Dicee Game](dicee)
 - [x] [Drum Kit](drum-kit)
 - [x] [Simon Game](simon-game)
+- [x] [Toggle Sidebar](toggle-sidebar)
 
 Visit the [live preview](https://genesisgabiola.github.io/sandbox/).
 
@@ -20,7 +21,7 @@ Visit the [live preview](https://genesisgabiola.github.io/sandbox/).
 
 Choose what you prefer:
 
-- Open an issue [here](https://github.com/genesisgabiola/sandbox/issues).
+- Open an [issue](https://github.com/genesisgabiola/sandbox/issues).
 - Contact me on [twitter](http://twitter.com/genesisgabiola).
 
 Any queries, suggestions, issues to report or critics are welcome :) You can freely connect to me.
