@@ -6,8 +6,9 @@ This reposity is a sandbox/playground for some code along tutorial courses I hav
 
 - [x] [Dicee Game](dicee)
 - [x] [Drum Kit](drum-kit)
+- [ ] [Loan Calculator](loan-calculator)
 - [x] [Simon Game](simon-game)
-- [ ] [Task List](task-list)
+- [x] [Task List](task-list)
 - [x] [Toggle Sidebar](toggle-sidebar)
 
 Visit the [live preview](https://genesisgabiola.github.io/sandbox/).
