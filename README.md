@@ -6,7 +6,8 @@ This reposity is a sandbox/playground for some code along tutorial courses I hav
 
 - [x] [Dicee Game](dicee)
 - [x] [Drum Kit](drum-kit)
-- [ ] [Loan Calculator](loan-calculator)
+- [x] [Loan Calculator](loan-calculator)
+- [ ] [Number Guesser](number-guesser)
 - [x] [Simon Game](simon-game)
 - [x] [Task List](task-list)
 - [x] [Toggle Sidebar](toggle-sidebar)
