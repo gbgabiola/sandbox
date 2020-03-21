@@ -2,6 +2,12 @@
 
 This reposity is a sandbox/playground for some code along tutorial courses I have taken, doing some challenges, small functionality of a site, or my own small projects.
 
+Future Improvements:
+
+- This project will be updated regularly, because I'm constantly learning new stuff.
+- Not much for the UI/UX design, functionality first, then maybe add some improvements on the UI/UX perspective.
+
+
 ## Lists of Sandbox Projects
 
 - [x] [Dicee Game](dicee)
@@ -14,13 +20,8 @@ This reposity is a sandbox/playground for some code along tutorial courses I hav
 
 Visit the [live preview](https://genesisgabiola.github.io/sandbox/).
 
-## Future Improvements:
 
-- [ ] This project will be updated regularly, because I'm always learning new stuff.
-- [ ] Not much for ui design, because it's just a list of sandbox projects, but maybe it will change in the future.
-
-
-## How to Contribute?
+## Contributing
 
 Choose what you prefer:
 
