@@ -9,7 +9,7 @@ Progress Bar is a custom built progress bar and independent component that can b
 - CSS3
 - JavaScript
 
-![Progress Bar Preview](img/preview.png "Progress Bar Preview")
+![Progress Bar Preview](img/preview.gif "Progress Bar Preview")
 
 Visit the [live site](https://genesisgabiola.github.io/sandbox/progress-bar).  
 Check the project in [CodePen](https://codepen.io/genesisgabiola/full/gOpdmjw).
