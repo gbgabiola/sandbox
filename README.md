@@ -14,6 +14,7 @@ Future Improvements:
 - [x] [Drum Kit](drum-kit)
 - [x] [Loan Calculator](loan-calculator)
 - [x] [Number Guesser](number-guesser)
+- [x] [Progress Bar](progress-bar)
 - [x] [Simon Game](simon-game)
 - [x] [Task List](task-list)
 - [x] [Toggle Sidebar](toggle-sidebar)
