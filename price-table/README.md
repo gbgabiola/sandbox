@@ -8,7 +8,7 @@ Price Table is a simple and independent pricing table component that can be adde
 - HTML5
 - CSS3
 
-![Price Table Preview](img/preview.gif "Price Table Preview")
+<!-- ![Price Table Preview](img/preview.gif "Price Table Preview") -->
 
 Visit the [live site](https://genesisgabiola.github.io/sandbox/price-table).
 
