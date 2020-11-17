@@ -19,7 +19,7 @@ Future Improvements:
 - [x] [Task List](task-list)
 - [x] [Toggle Sidebar](toggle-sidebar)
 - [x] [Hover Effect](hover-effect)
-- [ ] [Price Table](price-table)
+- [x] [Price Table](price-table)
 
 Visit the [live preview](https://genesisgabiola.github.io/sandbox/).
 
