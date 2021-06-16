@@ -12,6 +12,7 @@ Future Improvements:
 
 - [x] [Dicee Game](dicee)
 - [x] [Drum Kit](drum-kit)
+- [ ] [Ghibli API](ghibli-api)
 - [x] [Loan Calculator](loan-calculator)
 - [x] [Number Guesser](number-guesser)
 - [x] [Progress Bar](progress-bar)
@@ -21,14 +22,14 @@ Future Improvements:
 - [x] [Hover Effect](hover-effect)
 - [x] [Price Table](price-table)
 
-Visit the [live preview](https://genesisgabiola.github.io/sandbox/).
+Visit the [live preview](https://gbgabiola.github.io/sandbox/).
 
 
 ## Contributing
 
 Choose what you prefer:
 
-- Open an [issue](https://github.com/genesisgabiola/sandbox/issues).
-- Contact me on [twitter](http://twitter.com/genesisgabiola).
+- Open an [issue](https://github.com/gbgabiola/sandbox/issues).
+- Contact me on [twitter](http://twitter.com/gbgabiola).
 
 Any queries, suggestions, issues to report or critics are welcome :) You can freely connect to me.
