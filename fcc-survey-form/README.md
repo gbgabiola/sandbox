@@ -6,12 +6,12 @@ This project demonstrates semantic HTML5 elements and custom CSS3 styling. It wa
 
 ## 🚀 Live Links
 
-- **Production Site:** [View Live on GitHub Pages](https://gbgabiola.github.io/survey-form)
+- **Production Site:** [View Live on GitHub Pages](https://gbgabiola.github.io/sandbox/fcc-survey-form)
 - **Interactive Playground:** [Explore CodePen Sandbox](https://codepen.io/gbgabiola/full/mdJXoow)
 
 ## 📸 Preview
 
-[![FCC Survey Form Screenshot](img/screenshot.png "FCC Survey Form Screenshot")](https://gbgabiola.github.io/survey-form)
+[![FCC Survey Form Screenshot](img/screenshot.png "FCC Survey Form Screenshot")](https://gbgabiola.github.io/sandbox/fcc-survey-form)
 
 ## ✨ Key Features & Technical Goals
 
@@ -24,28 +24,12 @@ This project demonstrates semantic HTML5 elements and custom CSS3 styling. It wa
 
 - HTML5
 - CSS3
-- GitHub Pages
-
-## 💻 Quick Start & Local Development
-
-To clone, explore, or modify this project locally, run the following commands in your terminal:
-
-1. **Clone the Repository:**
-   ```bash
-   git clone https://github.com/gbgabiola/survey-form
-   ```
-2. **Navigate into the Project Folder:**
-   ```bash
-   cd fcc-survey-form
-   ```
-3. **Launch the Application:**<br/>
-   Open the `index.html` file directly in your preferred web browser, or launch it using an extension like **Live Server** in VS Code.
 
 ## 🤝 Feedback & Contributing
 
 Contributions, bug reports, and design suggestions are highly welcome!
 
-- **Technical Issues:** Feel free to open a detailed bug report or feature request via [GitHub Issues](https://github.com/gbgabiola/survey-form/issues).
+- **Technical Issues:** Feel free to open a detailed bug report or feature request via [GitHub Issues](https://github.com/gbgabiola/sandbox/issues).
 - **Get in touch:** Connect or chat with me on [LinkedIn](https://www.linkedin.com/in/gbgabiola) for collaborations.
 
 ## 🎓 Acknowledgements
