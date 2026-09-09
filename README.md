@@ -1,29 +1,53 @@
 # FCC Survey Form
 
-FCC Survey Form is a short survey form to help the developers improve the [freeCodeCamp](https://www.freecodecamp.org/) educational platform. This survey form shows a lot of important HTML elements to make a good form. It will also serve as one of the projects to complete freeCodeCamp's Responsive Web Design Track Project.
+A clean, modern, and fully responsive survey form designed to gather feedback from developers to help improve the [freeCodeCamp](https://freecodecamp.org) educational platform.
 
+This project demonstrates semantic HTML5 elements and custom CSS3 styling. It was built as one of the required projects for the **freeCodeCamp Responsive Web Design Certification**.
 
-## Built With
+## 🚀 Live Links
+
+- **Production Site:** [View Live on GitHub Pages](https://gbgabiola.github.io/survey-form)
+- **Interactive Playground:** [Explore CodePen Sandbox](https://codepen.io/gbgabiola/full/mdJXoow)
+
+## 📸 Preview
+
+[![FCC Survey Form Screenshot](img/screenshot.png "FCC Survey Form Screenshot")](https://gbgabiola.github.io/survey-form)
+
+## ✨ Key Features & Technical Goals
+
+- **Responsive Design:** Fluid layout optimized for desktops, tablets, and mobile screens.
+- **Semantic HTML:** Implements modern form elements according to accessibility best practices.
+- **Form Validation:** Native browser validation for required fields, email formatting, and numeric ranges.
+- **Custom Styling:** Tailored user experience featuring modern typography, input focus states, and a clean UI hierarchy.
+
+## 🛠️ Tech Stack
 
 - HTML5
 - CSS3
+- GitHub Pages
 
-[![FCC Survey Form Screenshot](img/screenshot.png "FCC Survey Form Screenshot")](https://genesisgabiola.github.io/fcc-survey-form/)
+## 💻 Quick Start & Local Development
 
-Visit the [live preview](https://genesisgabiola.github.io/fcc-survey-form/).  
-Check the project in [CodePen](https://codepen.io/genesisgabiola/full/mdJXoow).
+To clone, explore, or modify this project locally, run the following commands in your terminal:
 
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/gbgabiola/survey-form
+   ```
+2. **Navigate into the Project Folder:**
+   ```bash
+   cd fcc-survey-form
+   ```
+3. **Launch the Application:**<br/>
+   Open the `index.html` file directly in your preferred web browser, or launch it using an extension like **Live Server** in VS Code.
 
-## Contributing
+## 🤝 Feedback & Contributing
 
-Choose what you prefer:
+Contributions, bug reports, and design suggestions are highly welcome!
 
-- Open an [issue](https://github.com/genesisgabiolafcc-survey-form/issues).
-- Contact me on [twitter](http://twitter.com/genesisgabiola).
+- **Technical Issues:** Feel free to open a detailed bug report or feature request via [GitHub Issues](https://github.com/gbgabiola/survey-form/issues).
+- **Get in touch:** Connect or chat with me on [LinkedIn](https://www.linkedin.com/in/gbgabiola) for collaborations.
 
-Any queries, suggestions, issues to report or critics are welcome :) You can freely connect to me.
+## 🎓 Acknowledgements
 
-
-## Acknowledgement
-
-- [freeCodeCamp](https://www.freecodecamp.org/)
+- Thanks to [freeCodeCamp](https://freecodecamp.org) for providing the structural prompt and project requirements.
