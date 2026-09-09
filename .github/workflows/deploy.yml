@@ -1,0 +1,37 @@
+name: Build and Deploy Sandbox Dashboard
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-history: true
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-node: '20'
+
+      - name: Regenerate Root Index
+        run: node .github/scripts/generate-index.js
+
+      - name: Commit and Push Updated Index
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore: auto-update root index dashboard [skip ci]'
+          file_pattern: 'index.html'
+
+      - name: Deploy static content to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
