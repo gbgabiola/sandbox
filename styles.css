@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+:root {
+  --primary-color: #5FE2D1;
+  --primary-glow: rgba(95, 226, 209, 0.12);
+  --base-color: #ffffff;
+  --text-muted: #a0aec0;
+
+  /* Softened Dark Palette to reduce high-contrast eye strain */
+  --bg-gradient: linear-gradient(135deg, #161616 0%, #1e1e1e 50%, #121212 100%);
+  --card-bg: rgba(255, 255, 255, 0.02);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-hover-border: rgba(95, 226, 209, 0.3);
+}
+
+/* ==========================================================================
+   Reset & Document Structure
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #161616;
+  /* Fallback static color to prevent layout flashing */
+  background: var(--bg-gradient);
+  color: var(--base-color);
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-x: hidden;
+}
+
+/* Container Spacing */
+.container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+}
+
+/* ==========================================================================
+   Typography & Headers
+   ========================================================================== */
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+  letter-spacing: -0.05em;
+  background: linear-gradient(to right, var(--base-color), var(--primary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.container>p {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+}
+
+/* ==========================================================================
+   Dynamic Grid & Interactive Component Cards
+   ========================================================================== */
+ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+}
+
+li {
+  position: relative;
+}
+
+/* The Interactive Card Element Wrapper */
+li a {
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  color: var(--base-color);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: left;
+  /* Will-change hints the browser to use GPU acceleration to prevent screen tearing/flashing */
+  will-change: transform, box-shadow, border-color;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.3s ease;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth Arrow Indicator */
+li a::after {
+  content: '→';
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.8rem;
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+  opacity: 0.5;
+}
+
+/* Hover Adjustments */
+li a:hover {
+  color: var(--primary-color);
+  border-color: var(--card-hover-border);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 20px var(--primary-glow);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+li a:hover::after {
+  color: var(--primary-color);
+  transform: translateX(4px);
+  opacity: 1;
+}
+
+/* 🛠️ FIXED: Removed cursor progress changes to entirely bypass link navigation reflow stutter */
+li a:active {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 0.1s ease;
+}
+
+/* ==========================================================================
+   Footer Component Design
+   ========================================================================== */
+footer {
+  padding: 3rem 2rem;
+  text-align: center;
+  border-top: 1px solid var(--card-border);
+  background: rgba(0, 0, 0, 0.2);
+  font-size: 0.95rem;
+}
+
+footer p {
+  color: var(--text-muted);
+}
+
+footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px dashed transparent;
+  transition: border-color 0.2s ease;
+}
+
+footer a:hover {
+  border-color: var(--primary-color);
+}
+
+/* ==========================================================================
+   Responsive Adaptability Viewports
+   ========================================================================== */
+@media (max-width: 768px) {
+  .container {
+    padding: 3rem 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  ul {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  li a {
+    padding: 1.5rem;
+  }
+}
