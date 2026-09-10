@@ -19,7 +19,7 @@ A sleek, professional, and minimalist digital business card component designed t
 
 Contributions, bug reports, and design suggestions are highly welcome!
 
-- **Technical Issues:** Feel free to open a detailed bug report or feature request via [GitHub Issues](ps://github.com/gbgabiola/sandbox/issues).
+- **Technical Issues:** Feel free to open a detailed bug report or feature request via [GitHub Issues](https://github.com/gbgabiola/sandbox/issues).
 - **Get in touch:** Connect or chat with me on [LinkedIn](https://www.linkedin.com/in/gbgabiola) for collaborations.
 
 ## 🎓 Acknowledgements
