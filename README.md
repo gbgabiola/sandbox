@@ -18,6 +18,7 @@ Below is a dynamically generated index of the frontend modules available in this
 
 | Project Name | Stack Type | Technical Stack | Live Demo |
 | :--- | :--- | :--- | :--- |
+| **[Business Card](./business-card)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/business-card/) |
 | **[Dicee](./dicee)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/dicee/) |
 | **[Drum Kit](./drum-kit)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/drum-kit/) |
 | **[Fcc Survey Form](./fcc-survey-form)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/fcc-survey-form/) |

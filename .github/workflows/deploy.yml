@@ -24,14 +24,6 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
-      - name: Set up Node.js Environment
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-
-      - name: Regenerate Root Index & Documentation
-        run: node .github/scripts/generate-index.js
-
       - name: Upload Static Content Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
