@@ -6,11 +6,19 @@ on:
       - main
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: false
 
 jobs:
   build-and-deploy:
-    runs-history: true
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source Code
@@ -19,19 +27,16 @@ jobs:
       - name: Set up Node.js Environment
         uses: actions/setup-node@v4
         with:
-          node-node: '20'
+          node-version: '20'
 
-      - name: Regenerate Root Index
+      - name: Regenerate Root Index & Documentation
         run: node .github/scripts/generate-index.js
 
-      - name: Commit and Push Updated Index
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Upload Static Content Artifacts
+        uses: actions/upload-pages-artifact@v3
         with:
-          commit_message: 'chore: auto-update root index dashboard [skip ci]'
-          file_pattern: 'index.html'
+          path: '.'
 
-      - name: Deploy static content to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
