@@ -1,10 +1,12 @@
 const fs = require('fs');
 const path = require('path');
 
+console.log('🚀 [START] Initiating Sandbox Workspace Auto-Generation Pipeline...');
+console.log('------------------------------------------------====================');
+
 const rootDir = path.join(__dirname, '../../');
 const items = fs.readdirSync(rootDir);
 
-// Folders to completely ignore during the file system scan
 const exclude = ['.git', '.github', 'node_modules', 'img', 'favicons', '.vscode', '.vcode'];
 
 const projects = items
@@ -13,10 +15,13 @@ const projects = items
     return fs.statSync(fullPath).isDirectory() && !exclude.includes(item);
   })
   .map(folder => {
-    const jsonPath = path.join(rootDir, folder, 'project.json');
+    const folderPath = path.join(rootDir, folder);
+    const jsonPath = path.join(folderPath, 'project.json');
     let displayName = folder;
 
-    // 1. Try to read a localized JSON metadata configuration file first
+    const folderContents = fs.readdirSync(folderPath);
+    const hasJs = folderContents.some(file => file.endsWith('.js') && file !== 'project.json');
+
     if (fs.existsSync(jsonPath)) {
       try {
         const meta = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
@@ -25,7 +30,6 @@ const projects = items
         console.warn(`⚠️ Failed to parse json metadata in folder: ${folder}`);
       }
     } else {
-      // 2. Fallback: Automatically format slug names (e.g., "simon-game" -> "Simon Game")
       displayName = folder
         .split('-')
         .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -34,9 +38,18 @@ const projects = items
       if (displayName.toLowerCase() === 'ghibli api') displayName = 'Ghibli API';
     }
 
-    return { folder, displayName };
+    const stackIcon = hasJs ? '⚡ [Interactive]' : '🎨 [Presentational]';
+    console.log(`📁 Found Component: /${folder.padEnd(20)} → ${stackIcon.padEnd(16)} mapped as "${displayName}"`);
+
+    return { folder, displayName, hasJs };
   });
 
+console.log('------------------------------------------------====================');
+console.log(`📊 Analysis Complete: Detected ${projects.length} valid sandbox projects.`);
+
+/* ==========================================================================
+   1. BUILD ROOT INDEX.HTML
+   ========================================================================== */
 const htmlContent = `<!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,15 +61,17 @@ const htmlContent = `<!DOCTYPE html>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="manifest" href="site.webmanifest" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./style.css" />
     <title>Sandbox Projects</title>
   </head>
 
   <body>
-    <div class="container">
+    <header>
       <h1>Sandbox Projects</h1>
       <p>A compilation of my frontend components and responsive layout experiments.</p>
+    </header>
 
+    <div class="container">
       <ul>
         ${projects.map(project => `<li><a href="${project.folder}" target="_blank">${project.displayName}</a></li>`).join('\n        ')}
       </ul>
@@ -65,13 +80,13 @@ const htmlContent = `<!DOCTYPE html>
     <footer>
       <div class="footer-content">
         <div class="footer-meta">
-          <p class="footer-brand">&copy; <span id="currentYear"></span> Genesis Gabiola</p>
+          <p class="footer-brand">&copy; <span id="currentYear"></span> gbgabiola</p>
           <p class="footer-tagline">Crafting modular UI solutions and fluid layout systems.</p>
         </div>
         <div class="footer-links">
-          <a href="https://genesisgabiola.tech" target="_blank" rel="noopener noreferrer">Portfolio</a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">Source Code</a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
+          <a href="https://bit.ly/gbgabiola" target="_blank" rel="noopener noreferrer">Portfolio</a>
+          <a href="https://github.com/gbgabiola/sandbox" target="_blank" rel="noopener noreferrer">Source Code</a>
+          <a href="https://github.com/gbgabiola" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
         </div>
       </div>
     </footer>
@@ -83,4 +98,91 @@ const htmlContent = `<!DOCTYPE html>
 </html>`;
 
 fs.writeFileSync(path.join(rootDir, 'index.html'), htmlContent);
-console.log(`✅ Successfully compiled ${projects.length} sandbox projects!`);
+console.log('✍️  [WRITE] Root level "index.html" successfully updated.');
+
+/* ==========================================================================
+   2. AUTOMATE ROOT README.MD
+   ========================================================================== */
+const currentYear = new Date().getFullYear();
+
+const readmeContent = `# Sandbox Project
+
+![Repository Views](https://visitor-badge.laobi.icu/badge?page_id=gbgabiola.sandbox)
+
+Welcome to my personal frontend sandbox! This repository serves as a centralized hub for tracking my frontend stuff. It contains a collection of UI components, interactive web layouts, and standalone design labs.
+
+The primary goal of this sandbox is to focus on **clean architecture**, **semantic accessibility (a11y)**, and **fluid responsive design**.
+
+## 🚀 Live Hub
+
+- **Interactive Sandbox Hub:** [View All Projects Live](https://gbgabiola.github.io/sandbox)
+
+---
+
+## 🗂️ Component Dashboard
+
+Below is a dynamically generated index of the frontend modules available in this workspace. Each component lives in its own root directory for isolated execution.
+
+| Project Name | Stack Type | Technical Stack | Live Demo |
+| :--- | :--- | :--- | :--- |
+${projects
+  .map(p => {
+    const stackType = p.hasJs ? '⚡ Interactive' : '🎨 Presentational';
+    const techStack = p.hasJs ? '🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS' : '🧱 HTML5, 🎨 CSS3';
+    return `| **[${p.displayName}](./${p.folder})** | ${stackType} | ${techStack} | [Explore Live](https://gbgabiola.github.io/sandbox/${p.folder}/) |`;
+  })
+  .join('\n')}
+
+---
+
+## 🛠️ Architecture & Conventions
+
+To keep this ecosystem modular and easy to navigate, every project adheres to a strict individual directory layout:
+
+\`\`\`text
+sandbox/
+├── [project-name]/         <-- Explicit lowercase naming convention
+│   ├── index.html          <-- Standalone DOM entry point
+│   ├── style.css           <-- Component-scoped visual rules
+│   └── script.js           <-- Component-scoped interactive logic (optional)
+\`\`\`
+
+- **No Cross-Pollination:** Styles and logic are entirely contained inside their respective project directories.
+- **Component-First Isolation:** Any project can be cloned or extracted independently without breaking dependencies.
+
+---
+
+## 💻 Local Setup & Execution
+
+To explore, run, or debug any specific project locally on your machine:
+
+1. **Clone this workspace:**
+   \`\`\`bash
+   git clone https://github.com/gbgabiola/sandbox.git
+   \`\`\`
+2. **Change into the repository directory:**
+   \`\`\`bash
+   cd sandbox
+   \`\`\`
+3. **Run a local server:**<br />
+   Open the root workspace using VS Code and launch the **Live Server** extension, or open individual \`index.html\` files directly inside your preferred web browser.
+
+---
+
+## 🤝 Let's Connect
+
+If you want to talk shop about software engineering or collaboration opportunities, feel free to drop by:
+
+* [Portfolio](https://bit.ly/gbgabiola)
+* [LinkedIn](https://www.linkedin.com/in/gbgabiola)
+* [X (Twitter)](http://x.com/gbgabiola)
+
+---
+
+&copy; ${currentYear} gbgabiola • This repository is completely open-source and free to adapt under the terms of the [MIT License](LICENSE).
+`;
+
+fs.writeFileSync(path.join(rootDir, 'README.md'), readmeContent);
+console.log('✍️  [WRITE] Root level "README.md" dashboard documentation compiled.');
+console.log('------------------------------------------------====================');
+console.log('🎉 [SUCCESS] Deployment pipeline asset updates built clean and complete.');
