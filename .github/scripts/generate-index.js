@@ -63,9 +63,15 @@ const htmlContent = `<!DOCTYPE html>
     <link rel="manifest" href="site.webmanifest" />
     <link rel="stylesheet" href="./style.css" />
     <title>Sandbox Projects</title>
+    <script>
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
   </head>
 
   <body>
+    <button id="themeToggle" class="theme-toggle" aria-label="Toggle visual theme mode">🌓</button>
+
     <header>
       <h1>Sandbox Projects</h1>
       <p>A compilation of my frontend components and responsive layout experiments.</p>
@@ -78,7 +84,7 @@ const htmlContent = `<!DOCTYPE html>
           aria-label="Search sandbox projects"
           autocomplete="off"
         />
-        <span id="searchCounter" class="search-counter">Showing all labs</span>
+        <span id="searchCounter" class="search-counter">Analyzing logs...</span>
       </div>
     </header>
 
@@ -156,6 +162,15 @@ const htmlContent = `<!DOCTYPE html>
           searchBar.select();
         }
       });
+
+      const themeToggleBtn = document.getElementById('themeToggle');
+      themeToggleBtn.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const nextTheme = currentTheme === 'light' ? 'dark' : 'light';
+
+        document.documentElement.setAttribute('data-theme', nextTheme);
+        localStorage.setItem('theme', nextTheme);
+      })
     </script>
   </body>
 </html>`;
