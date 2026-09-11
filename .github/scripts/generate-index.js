@@ -123,26 +123,28 @@ const htmlContent = `<!DOCTYPE html>
       document.getElementById('currentYear').textContent = new Date().getFullYear();
 
       const searchBar = document.getElementById('searchBar');
-      const projectItems = document.querySelectorAll('.project-item');
       const searchCounter = document.getElementById('searchCounter');
       const noResults = document.getElementById('noResults');
-      const totalCount = projectItems.length;
 
+      const totalCount = document.querySelectorAll('.project-item').length;
       searchCounter.textContent = 'Showing all ' + totalCount + ' labs';
 
       searchBar.addEventListener('input', function(e) {
         const query = e.target.value.toLowerCase().trim();
         let matchedCount = 0;
 
-        projectItems.forEach(item => {
-          const nameAttr = item.getAttribute('data-name');
-          const folderAttr = item.getAttribute('data-folder');
+        const liveProjectItems = document.querySelectorAll('.project-item');
 
-          if (nameAttr.includes(query) || folderAttr.includes(query)) {
-            item.style.display = '';
+        liveProjectItems.forEach(item => {
+          const nameAttr = item.getAttribute('data-name') || '';
+          const folderAttr = item.getAttribute('data-folder') || '';
+          const isMatch = nameAttr.includes(query) || folderAttr.includes(query);
+
+          if (isMatch) {
+            item.classList.remove('hidden-item');
             matchedCount++;
           } else {
-            item.style.display = 'none';
+            item.classList.add('hidden-item');
           }
         });
 
