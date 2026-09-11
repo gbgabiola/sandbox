@@ -27,7 +27,7 @@ const projects = items
         const meta = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
         if (meta.title) displayName = meta.title;
       } catch (e) {
-        console.warn(`⚠️ Failed to parse json metadata in folder: ${folder}`);
+        console.warn(`⚠️  [WARN] Failed to parse json metadata in folder: ${folder}`);
       }
     } else {
       displayName = folder
@@ -69,12 +69,34 @@ const htmlContent = `<!DOCTYPE html>
     <header>
       <h1>Sandbox Projects</h1>
       <p>A compilation of my frontend components and responsive layout experiments.</p>
+
+      <div class="search-wrapper">
+        <input
+          type="text"
+          id="searchBar"
+          placeholder="🔍 Search by name or keyword..."
+          aria-label="Search sandbox projects"
+          autocomplete="off"
+        />
+        <span id="searchCounter" class="search-counter">Showing all labs</span>
+      </div>
     </header>
 
     <div class="container">
-      <ul>
-        ${projects.map(project => `<li><a href="${project.folder}" target="_blank">${project.displayName}</a></li>`).join('\n        ')}
+      <ul id="projectList">
+        ${projects
+          .map(
+            project => `
+        <li class="project-item" data-name="${project.displayName.toLowerCase()}" data-folder="${project.folder.toLowerCase()}">
+          <a href="${project.folder}" target="_blank">${project.displayName}</a>
+        </li>`,
+          )
+          .join('')}
       </ul>
+
+      <div id="noResults" class="no-results-hidden">
+        <p>🛸 No matching sandbox projects found.</p>
+      </div>
     </div>
 
     <footer>
@@ -93,6 +115,39 @@ const htmlContent = `<!DOCTYPE html>
 
     <script>
       document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+      const searchBar = document.getElementById('searchBar');
+      const projectItems = document.querySelectorAll('.project-item');
+      const searchCounter = document.getElementById('searchCounter');
+      const noResults = document.getElementById('noResults');
+      const totalCount = projectItems.length;
+
+      searchBar.addEventListener('input', function(e) {
+        const query = e.target.value.toLowerCase().trim();
+        let matchedCount = 0;
+
+        projectItems.forEach(item => {
+          const nameAttr = item.getAttribute('data-name');
+          const folderAttr = item.getAttribute('data-folder');
+
+          // If the item matches either the formatted title or the raw folder slug
+          if (nameAttr.includes(query) || folderAttr.includes(query)) {
+            item.style.display = '';
+            matchedCount++;
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        // Update display count telemetry smoothly
+        if (query === '') {
+          searchCounter.textContent = 'Showing all ' + totalCount + ' labs';
+          noResults.className = 'no-results-hidden';
+        } else {
+          searchCounter.textContent = 'Found ' + matchedCount + ' matching result' + (matchedCount === 1 ? '' : 's');
+          noResults.className = matchedCount === 0 ? 'no-results-visible' : 'no-results-hidden';
+        }
+      });
     </script>
   </body>
 </html>`;
