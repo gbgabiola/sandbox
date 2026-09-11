@@ -74,7 +74,7 @@ const htmlContent = `<!DOCTYPE html>
         <input
           type="text"
           id="searchBar"
-          placeholder="🔍 Search by name or keyword..."
+          placeholder="🔍 Search labs by name... (Press '/' to focus)"
           aria-label="Search sandbox projects"
           autocomplete="off"
         />
@@ -130,7 +130,6 @@ const htmlContent = `<!DOCTYPE html>
           const nameAttr = item.getAttribute('data-name');
           const folderAttr = item.getAttribute('data-folder');
 
-          // If the item matches either the formatted title or the raw folder slug
           if (nameAttr.includes(query) || folderAttr.includes(query)) {
             item.style.display = '';
             matchedCount++;
@@ -139,13 +138,20 @@ const htmlContent = `<!DOCTYPE html>
           }
         });
 
-        // Update display count telemetry smoothly
         if (query === '') {
           searchCounter.textContent = 'Showing all ' + totalCount + ' labs';
           noResults.className = 'no-results-hidden';
         } else {
           searchCounter.textContent = 'Found ' + matchedCount + ' matching result' + (matchedCount === 1 ? '' : 's');
           noResults.className = matchedCount === 0 ? 'no-results-visible' : 'no-results-hidden';
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === '/' && document.activeElement !== searchBar) {
+          e.preventDefault();
+          searchBar.focus();
+          searchBar.select();
         }
       });
     </script>
