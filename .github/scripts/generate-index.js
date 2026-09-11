@@ -122,6 +122,8 @@ const htmlContent = `<!DOCTYPE html>
       const noResults = document.getElementById('noResults');
       const totalCount = projectItems.length;
 
+      searchCounter.textContent = 'Showing all ' + totalCount + ' labs';
+
       searchBar.addEventListener('input', function(e) {
         const query = e.target.value.toLowerCase().trim();
         let matchedCount = 0;
