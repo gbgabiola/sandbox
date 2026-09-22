@@ -34,8 +34,9 @@ body {
   width: 100%;
   border-bottom: 4px solid #6366f1;
   display: block;
-  height: 210px;
+  height: 220px;
   object-fit: cover;
+  object-position: bottom center;
 }
 
 .post-content {
