@@ -29,6 +29,7 @@ Below is a dynamically generated index of the frontend modules available in this
 | **[Loan Calculator](./loan-calculator)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/loan-calculator/) |
 | **[Number Guesser](./number-guesser)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/number-guesser/) |
 | **[Price Table](./price-table)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/price-table/) |
+| **[Pricing Plans](./pricing-plans)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/pricing-plans/) |
 | **[Progress Bar](./progress-bar)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/progress-bar/) |
 | **[Simon Game](./simon-game)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/simon-game/) |
 | **[Task List](./task-list)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/task-list/) |
