@@ -1,6 +1,6 @@
-# Business Card
+# Pricing Plans
 
-A sleek, professional, and minimalist digital business card component designed to present essential professional contact information and social networking links.
+A highly performant, production-optimized pricing matrix built using a clean, modern SaaS aesthetic.
 
 ![Repository Views](https://visitor-badge.laobi.icu/badge?page_id=gbgabiola.sandbox)
 
@@ -13,9 +13,9 @@ A sleek, professional, and minimalist digital business card component designed t
 
 ## 📸 Preview
 
-[![Business Card Preview](./img/screenshot.png "Business Card Preview")](https://gbgabiola.github.io/sandbox/business-card)
+[![Pricing Plans Preview](./img/screenshot.png "Pricing Plans Preview")](https://gbgabiola.github.io/sandbox/pricing-plans)
 
-Visit the [Live Preview](https://gbgabiola.github.io/sandbox/business-card)
+Visit the [Live Preview](https://gbgabiola.github.io/sandbox/pricing-plans)
 
 ## 🚀 Getting Started
 
@@ -27,7 +27,7 @@ To explore, run, or debug the project locally on your machine:
    ```
 2. **Change into this directory:**
    ```sh
-   cd sandbox/business-card
+   cd sandbox/pricing-plans
    ```
 3. **Run a local server:**<br />
    Open the root workspace using VS Code and launch the **Live Server** extension, or open individual `index.html` files directly inside your preferred web browser.

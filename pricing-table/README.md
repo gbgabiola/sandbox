@@ -1,6 +1,6 @@
-# Business Card
+# Pricing Table
 
-A sleek, professional, and minimalist digital business card component designed to present essential professional contact information and social networking links.
+Pricing Table is a simple and independent component that can be added to any future website/apps.
 
 ![Repository Views](https://visitor-badge.laobi.icu/badge?page_id=gbgabiola.sandbox)
 
@@ -13,9 +13,9 @@ A sleek, professional, and minimalist digital business card component designed t
 
 ## 📸 Preview
 
-[![Business Card Preview](./img/screenshot.png "Business Card Preview")](https://gbgabiola.github.io/sandbox/business-card)
+[![Pricing Table Preview](./img/screenshot.png "Pricing Table Preview")](https://gbgabiola.github.io/sandbox/pricing-table)
 
-Visit the [Live Preview](https://gbgabiola.github.io/sandbox/business-card)
+Visit the [Live Preview](https://gbgabiola.github.io/sandbox/pricing-table)
 
 ## 🚀 Getting Started
 
@@ -27,7 +27,7 @@ To explore, run, or debug the project locally on your machine:
    ```
 2. **Change into this directory:**
    ```sh
-   cd sandbox/business-card
+   cd sandbox/pricing-table
    ```
 3. **Run a local server:**<br />
    Open the root workspace using VS Code and launch the **Live Server** extension, or open individual `index.html` files directly inside your preferred web browser.
@@ -69,3 +69,9 @@ If you want to talk shop about software engineering or collaboration opportuniti
 * [Portfolio](https://bit.ly/gbgabiola)
 * [LinkedIn](https://www.linkedin.com/in/gbgabiola)
 * [X (Twitter)](http://x.com/gbgabiola)
+
+___
+
+## 🎓 Acknowledgements
+
+- Thanks to **Colt Steele** & **Travis Williamson** for providing the structural prompt and project requirements.
