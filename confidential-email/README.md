@@ -1,4 +1,4 @@
-# Blog Post Card
+# Confidential Email Component
 
 A sleek, responsive, and secure message card UI engineered for data-privacy layouts.
 
@@ -13,7 +13,7 @@ A sleek, responsive, and secure message card UI engineered for data-privacy layo
 
 ## 📸 Preview
 
-[![Blog Post Card Preview](./img/screenshot.png "Blog Post Card Preview")](https://gbgabiola.github.io/sandbox/confidential-email)
+[![Confidential Email Component Preview](./img/screenshot.png "Confidential Email Component Preview")](https://gbgabiola.github.io/sandbox/confidential-email)
 
 Visit the [Live Preview](https://gbgabiola.github.io/sandbox/confidential-email)
 
