@@ -20,6 +20,7 @@ Below is a dynamically generated index of the frontend modules available in this
 | :--- | :--- | :--- | :--- |
 | **[Blog Post Card](./blog-post-card)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/blog-post-card/) |
 | **[Business Card](./business-card)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/business-card/) |
+| **[Confidential Email](./confidential-email)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/confidential-email/) |
 | **[Dicee](./dicee)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/dicee/) |
 | **[Drum Kit](./drum-kit)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/drum-kit/) |
 | **[Fcc Survey Form](./fcc-survey-form)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/fcc-survey-form/) |
