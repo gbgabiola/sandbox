@@ -24,6 +24,7 @@ Below is a dynamically generated index of the frontend modules available in this
 | **[Dicee](./dicee)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/dicee/) |
 | **[Drum Kit](./drum-kit)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/drum-kit/) |
 | **[Fcc Survey Form](./fcc-survey-form)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/fcc-survey-form/) |
+| **[Feature Selection](./feature-selection)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/feature-selection/) |
 | **[Ghibli API](./ghibli-api)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/ghibli-api/) |
 | **[Hover Effect](./hover-effect)** | 🎨 Presentational | 🧱 HTML5, 🎨 CSS3 | [Explore Live](https://gbgabiola.github.io/sandbox/hover-effect/) |
 | **[Loan Calculator](./loan-calculator)** | ⚡ Interactive | 🧱 HTML5, 🎨 CSS3, ⚡ Vanilla JS | [Explore Live](https://gbgabiola.github.io/sandbox/loan-calculator/) |
